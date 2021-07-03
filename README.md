@@ -7,3 +7,7 @@
 
 - 随缘更新，仅编译自用学习，无其他添加&改写
 - Update once every one or two month, only compile for self-use & learning, no other additions & rewrites.
+
+- Target: X86
+- Kernel Size: 64 mb
+- Rom Size: 1024 mb
