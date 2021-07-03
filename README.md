@@ -1,5 +1,6 @@
-Lean's OpenWrt source with extra packages from kenzok8 (https://github.com/kenzok8/openwrt-packages).
-=
+# Lean's OpenWrt source with extra packages from kenzok8 
+- (https://github.com/kenzok8/openwrt-packages).
+----
 
 - 固件包括但不限于以下程序 Packages compiled include but not limited to: 
   - ADGuardHome, advanced, JD-dailybonus, severchan, SSR plus, argon-new(Theme), unblockmusic, verysync, WOL, xunlei-acc, uHTTPd, zerotier
