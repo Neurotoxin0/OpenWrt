@@ -1,4 +1,4 @@
-Lean's OpenWrt source with extra packages from kenzok8.
+Lean's OpenWrt source with extra packages from kenzok8 (https://github.com/kenzok8/openwrt-packages).
 
 
 固件包括但不限于以下程序:
