@@ -63,20 +63,21 @@ jobs:
       run: |
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-    
-    #- name: Personalized
-    #  working-directory: ./openwrt
-    #  run: |
-    #    sed -i 's/192.168.1.1/192.168.31.2/g' openwrt/package/base-files/files/bin/config_generate
 
     - name: Import / Generate Config File
       working-directory: ./openwrt
       run: git clone https://github.com/Neurotoxin0/External_Config_File.git
+      # run: make menuconfig
+
+    - name: Personalized
+      working-directory: ./openwrt
+      run: |
+        sed -i 's/192.168.1.1/192.168.31.2/g' openwrt/package/base-files/files/bin/config_generate
         
     - name: Download Make File
       working-directory: ./openwrt
       run: |
-        make download -j$(nproc)
+        make download -j8
         find dl -size -1024c -exec rm -f {} \;
 
     - name: Compile Firmware
