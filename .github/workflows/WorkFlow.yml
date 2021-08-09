@@ -54,7 +54,7 @@ jobs:
         cd openwrt
         echo "src-git ssrp https://github.com/fw876/helloworld.git" >> ./feeds.conf.default
         echo "src-git kenzo https://github.com/kenzok8/openwrt-packages.git" >> ./feeds.conf.default
-        echo "src-git small https://github.com/kenzok8/small" >> ./feeds.conf.default
+        echo "src-git small https://github.com/kenzok8/small.git" >> ./feeds.conf.default
         cd package
         git clone https://github.com/kenzok8/openwrt-packages.git
 
@@ -70,8 +70,8 @@ jobs:
     #    sed -i 's/192.168.1.1/192.168.31.2/g' openwrt/package/base-files/files/bin/config_generate
 
     - name: Import / Generate Config File
-      
-      
+      working-directory: ./openwrt
+      run: git clone https://github.com/Neurotoxin0/External_Config_File.git
         
     - name: Download Make File
       working-directory: ./openwrt
