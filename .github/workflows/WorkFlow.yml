@@ -50,7 +50,8 @@ jobs:
         REPO_URL: https://github.com/coolsnowwolf/lede
         REPO_BRANCH: master 
       run: |
-        git clone --depth 1 $REPO_URL -b $REPO_BRANCH
+        git clone --depth 1 $REPO_URL -b $REPO_BRANCH ./OP
+        cd OP
         echo "src-git ssrp https://github.com/fw876/helloworld.git" >> ./feeds.conf.default
         echo "src-git kenzo https://github.com/kenzok8/openwrt-packages.git" >> ./feeds.conf.default
         echo "src-git small https://github.com/kenzok8/small.git" >> ./feeds.conf.default
@@ -58,6 +59,7 @@ jobs:
         git clone https://github.com/kenzok8/openwrt-packages.git
 
     - name: Feeds Update & Install
+      working-directory: ./OP
       run: |
         ./scripts/feeds update -a
         ./scripts/feeds install -a
@@ -65,21 +67,26 @@ jobs:
     - name: Import / Generate Config File
       run: |
         git clone https://github.com/Neurotoxin0/External_Config_File.git
-        mv ./External_Config_File/.config ./
-        rm -rf ./External_Config_File
+        mv ./External_Config_File/.config ./OP
         make defconfig
-      # run: make menuconfig  # if no external config needed
+      # -----if no external config needed-----
+      # run: |
+      #  cd OP
+      #  make menuconfig  
 
     - name: Personalized
+      working-directory: ./OP
       run: |
         sed -i 's/192.168.1.1/192.168.31.2/g' ./package/base-files/files/bin/config_generate
         
     - name: Download Make File
+      working-directory: ./OP
       run: |
         make download -j8
         find dl -size -1024c -exec rm -f {} \;
 
     - name: Compile Firmware
+      working-directory: ./OP
       run: |
         echo -e "$(($(nproc)+1)) thread compile"
         make -j$(($(nproc)+1)) || make -j1 V=s
@@ -96,19 +103,19 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: OpenWrt_buildinfo
-        path: ./artifact/buildinfo/
+        path: ./OP/artifact/buildinfo/
 
     - name: Deliver package
       uses: actions/upload-artifact@v2
       with:
         name: OpenWrt_package
-        path: ./artifact/package/
+        path: ./OP/artifact/package/
 
     - name: Deliver firmware
       uses: actions/upload-artifact@v2
       with:
         name: OpenWrt_firmware
-        path: ./bin/targets/
+        path: ./OP/bin/targets/
   
 
     - name: Upload release asset
