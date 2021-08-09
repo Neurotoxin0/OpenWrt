@@ -15,41 +15,25 @@ jobs:
     steps:
 
     - name: Clone Source Codes & Alter Feeds
+      env: 
+        REPO_URL: https://github.com/coolsnowwolf/lede
+        REPO_BRANCH: master 
       run: |
-        mkdir buildinfo
-        mkdir package
-        mkdir targets
-        echo "buildinfo" > ./buildinfo/build
-        echo "package" > ./package/pack
-        echo "targets" > ./targets/tar
+        git clone --depth 1 $REPO_URL -b $REPO_BRANCH
+        echo "src-git ssrp https://github.com/fw876/helloworld.git" >> ./feeds.conf.default
+        echo "src-git kenzo https://github.com/kenzok8/openwrt-packages.git" >> ./feeds.conf.default
+        echo "src-git small https://github.com/kenzok8/small.git" >> ./feeds.conf.default
+        cd package
+        git clone https://github.com/kenzok8/openwrt-packages.git
 
-     
-    - name: Deliver buildinfo
-      uses: actions/upload-artifact@v2
-      with:
-        name: OpenWrt_buildinfo
-        path: ./buildinfo/
+    - name: Import / Generate Config File
+      run: |
+        git clone https://github.com/Neurotoxin0/External_Config_File.git
+        mv ./External_Config_File/.config ./
+        rm -rf ./External_Config_File
+        make defconfig
+      # run: make menuconfig  # if no external config needed
 
-    - name: Deliver package
-      uses: actions/upload-artifact@v2
-      with:
-        name: OpenWrt_package
-        path: ./package/
-
-    - name: Deliver firmware
-      uses: actions/upload-artifact@v2
-      with:
-        name: OpenWrt_firmware
-        path: ./targets/
-  
-
-    - name: Upload release asset
-      if: github.event == 'release'
-      uses: svenstaro/upload-release-action@v2
-      with:
-        repo_token: ${{ secrets.YOURTOKEN }}
-        file: ./artifact/firmware/*
-        tag: ${{ github.ref }}
-        file_glob: true
-        
-          
+    - name: Personalized
+      run: |
+        sed -i 's/192.168.1.1/192.168.31.2/g' ./package/base-files/files/bin/config_generate
