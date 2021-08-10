@@ -105,16 +105,16 @@ jobs:
       run: |
         echo "Current Path:"
         pwd
-        ehco "echo "======================="
+        echo "======================="
         ls -al
-        ehco "echo "======================"
+        echo "======================"
         
         cd ./bin/targets
         echo "Current Path:"
         pwd
-        ehco "echo "======================="
+        echo "======================="
         ls -al
-        ehco "echo "======================"
+        echo "======================"
      
     - name: Prepare Deliver Files
       run: |
