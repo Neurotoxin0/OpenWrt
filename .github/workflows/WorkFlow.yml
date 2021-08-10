@@ -13,9 +13,9 @@ name: Project Openwrt CI
 on: 
   #release:
   #  types: [published]   
-  push:
-    branches: 
-      - master     
+  #push:
+  #  branches: 
+  #    - master     
   schedule:
     - cron: 0 */48 * * *  
   #watch:
@@ -82,6 +82,7 @@ jobs:
     - name: Download Make File
       working-directory: ./OP
       run: |
+        make download -j8
         make download -j8
         find dl -size -1024c -exec rm -f {} \;
 
