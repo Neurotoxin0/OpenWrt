@@ -99,22 +99,6 @@ jobs:
         du -h --max-depth=1 ./ --exclude=build_dir --exclude=bin
         du -h --max-depth=1 ./build_dir
         du -h --max-depth=1 ./bin
-
-    - name: Listing Dir
-      working-directory: ./OP
-      run: |
-        echo "Current Path:"
-        pwd
-        echo "======================="
-        ls -al
-        echo "======================"
-        
-        cd ./bin/targets
-        echo "Current Path:"
-        pwd
-        echo "======================="
-        ls -al
-        echo "======================"
      
     - name: Prepare Deliver Files
       run: |
