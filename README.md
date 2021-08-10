@@ -34,3 +34,6 @@
 - Boot Loader: EFI & BIOS
 - Kernel Size: 16 mb
 - Rom Size: 1024 mb
++ Default IP: 192.168.31.2
++ Default Username: root
++ Default Password: password
