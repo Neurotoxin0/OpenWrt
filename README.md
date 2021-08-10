@@ -21,7 +21,7 @@
 - 固件包括但不限于以下程序:
 - Packages compiled include but not limited to: 
   + ADByBy Plus, ADGuardHome, Advanced, Argon New(Theme), ARP-Bind, Auto Reboot
-  + Baidu-PCS, Commands, IFit(Theme), OpenClash, QOS, Serverchan, Flow Offload, 
+  + Baidu-PCS, Commands, iFit(Theme), OpenClash, QOS, Serverchan, Flow Offload, 
   + uHTTPd, unblockmusic, UU Game Booster, VerySync(limited), KMS Server, VSFTPD, 
   + Wifi Schedule, WOL, XunLei Accelerator, ZeroTier
 
