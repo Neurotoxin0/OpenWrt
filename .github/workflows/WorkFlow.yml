@@ -117,15 +117,15 @@ jobs:
      
     - name: Prepare Deliver Files
       run: |
-      mkdir buildinfo
-      cp -rf $(find ./OP/bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") ./buildinfo
+        mkdir buildinfo
+        mv $(find ./OP/bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") ./buildinfo
 
-      mkdir firmware
-      rm -rf $(find ./OP/bin/targets/ -type d -name "packages")
-      cp -rf $(find ./OP/bin/targets/ -type f) ./firmware
+        mkdir firmware
+        rm -rf $(find ./OP/bin/targets/ -type d -name "packages")
+        mv $(find ./OP/bin/targets/ -type f) ./firmware
 
-      mkdir packages
-      cp -rf $(find ./OP/bin/packages/ -type f -name "*.ipk") ./packages
+        mkdir packages
+        mv $(find ./OP/bin/packages/ -type f -name "*.ipk") ./packages
 
     - name: Deliver buildinfo
       uses: actions/upload-artifact@v2
