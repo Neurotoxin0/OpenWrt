@@ -146,7 +146,7 @@ jobs:
         name: OpenWrt_package
         path: ./packages
 
-    - name: Upload release asset  # Not in use
+    - name: Upload release asset
       if: github.event == 'release'
       uses: svenstaro/upload-release-action@v2
       with:
