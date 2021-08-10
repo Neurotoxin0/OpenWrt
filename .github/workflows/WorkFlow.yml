@@ -150,8 +150,8 @@ jobs:
       if: github.event == 'release'
       uses: svenstaro/upload-release-action@v2
       with:
-        repo_token: ${{ secrets.YOURTOKEN }}
-        file: ./artifact/firmware/*
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: ./firmware/*
         tag: ${{ github.ref }}
         file_glob: true
         
