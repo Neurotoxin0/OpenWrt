@@ -98,27 +98,54 @@ jobs:
         du -h --max-depth=1 ./ --exclude=build_dir --exclude=bin
         du -h --max-depth=1 ./build_dir
         du -h --max-depth=1 ./bin
+
+    - name: Listing Dir
+      working-directory: ./OP
+      run: |
+        echo "Current Path:"
+        pwd
+        ehco "echo "======================="
+        ls -al
+        ehco "echo "======================"
+        
+        cd ./bin/targets
+        echo "Current Path:"
+        pwd
+        ehco "echo "======================="
+        ls -al
+        ehco "echo "======================"
      
+    - name: Prepare Deliver Files
+      run: |
+      mkdir buildinfo
+      mv $(find ./OP/bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") ./buildinfo
+
+      mkdir firmware
+      rm -rf $(find ./OP/bin/targets/ -type d -name "packages")
+      mv $(find ./OP/bin/targets/ -type f) ./firmware
+
+      mkdir packages
+      mv $(find ./OP/bin/packages/ -type f -name "*.ipk") ./packages
+
     - name: Deliver buildinfo
       uses: actions/upload-artifact@v2
       with:
         name: OpenWrt_buildinfo
-        path: ./OP/artifact/buildinfo/
-
-    - name: Deliver package
-      uses: actions/upload-artifact@v2
-      with:
-        name: OpenWrt_package
-        path: ./OP/artifact/package/
+        path: ./buildinfo
 
     - name: Deliver firmware
       uses: actions/upload-artifact@v2
       with:
         name: OpenWrt_firmware
-        path: ./OP/bin/targets/
-  
+        path: ./firmware
 
-    - name: Upload release asset
+    - name: Deliver package
+      uses: actions/upload-artifact@v2
+      with:
+        name: OpenWrt_package
+        path: ./packages
+
+    - name: Upload release asset  # Not in use
       if: github.event == 'release'
       uses: svenstaro/upload-release-action@v2
       with:
