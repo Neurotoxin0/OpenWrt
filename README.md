@@ -19,7 +19,7 @@
 ## 源码 & 组件来源 / Source Codes & Packages Contributer：
 + [![Lean](https://img.shields.io/badge/OpenWrt%20Source%20Code-Lean-brightgreen?style=flat-square&logo=appveyor)](https://github.com/coolsnowwolf/lede) 
 + [![Kenzok8](https://img.shields.io/badge/OpenWrt%20Extra%20Packages-Kenzok8-brightgreen?style=flat-square&logo=appveyor)](https://github.com/kenzok8/openwrt-packages) 
-+ [![Esirplayground](https://img.shields.io/badge/Github%20WorkFlow%20Auto%20Build-esirplayground-brightgreen?style=flat-square&logo=appveyor)](https://github.com/esirplayground/AutoBuild-OpenWrt)
++ [![Esirplayground](https://img.shields.io/badge/Github%20WorkFlow%20Auto%20Build-Esirplayground-brightgreen?style=flat-square&logo=appveyor)](https://github.com/esirplayground/AutoBuild-OpenWrt)
 
 ----
 
