@@ -4,7 +4,7 @@
 [2]: https://github.com/Neurotoxin0/OpenWrt/issues/new
 [3]: https://img.shields.io/badge/PRs-Welcome-brightgreen
 [4]: https://github.com/Neurotoxin0/OpenWrt/pulls
-[5]: https://img.shields.io/github/workflow/status/Neurotoxin0/OpenWrt/Project%20Openwrt%20CI
+[5]: https://img.shields.io/github/workflow/status/Neurotoxin0/OpenWrt/Project%20Openwrt%20CL
 [6]: https://github.com/Neurotoxin0/OpenWrt/actions
 [7]: https://img.shields.io/github/v/release/Neurotoxin0/OpenWrt
 [8]: https://github.com/Neurotoxin0/OpenWrt/releases
