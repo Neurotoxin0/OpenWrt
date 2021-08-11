@@ -67,8 +67,9 @@ jobs:
         path: ./Source_Code/
     
     - name: Import / Generate Config File / 导入或生成配置文件
+      working-directory: ./OP 
       run: |
-        mv ./Source_Code/.github/.config ./OP
+        mv ../Source_Code/.github/.config ./
         make defconfig
       # -----if no external config needed-----
       # -----以下为采用默认配置而不导入外置配置-----
