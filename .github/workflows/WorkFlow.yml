@@ -159,13 +159,13 @@ jobs:
 
     - name: Get Date / 获取当前日期
       id: date
-      run: echo "::set-output name=date::$(date + '%Y%m%d')"
+      run: echo "::set-output name=date::$(date "+%Y%m%d")"
     
     - name: Upload release asset / 自动发布至 Releases
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: ./firmware/All/*
-        tag: ${{ github.ref }}
+        tag: ${{ steps.date.outputs.date }}
         overwrite: true
         file_glob: true
