@@ -1,9 +1,14 @@
 name: WorkFlow Test
 
-on: workflow_dispatch: 
+on:
+  workflow_dispatch: 
   
 jobs:
   build:
+    name: Test Date
+    runs-on: ubuntu-latest
+    
+    steps:
     - name: Get Date / 获取当前日期
       id: date
       run: echo "::set-output name=date::$(date + '%Y%m%d')"
