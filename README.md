@@ -31,7 +31,7 @@
   + Wifi Schedule, WOL, XunLei Accelerator, ZeroTier
 
 - 每48小时自动更新, 支持发布 & 修改源码时自动更新; 仅编译自用学习
-- Update every 48 hours, support auto-update when source codes are being pblished or altered; only compile for self-use & learning
+- Update every 48 hours, support auto-update when source codes are being published or altered; only compile for self-use & learning
 
 ----
 
