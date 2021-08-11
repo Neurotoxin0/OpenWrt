@@ -45,6 +45,7 @@ jobs:
         sudo -E apt-get clean
         df -h
 
+    
     - name: Clone Source Codes & Alter Feeds
       env: 
         REPO_URL: https://github.com/coolsnowwolf/lede
@@ -64,10 +65,14 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
+    - name: Clone Config File
+      uses: actions/checkout@v2
+      with:
+        path: ./Source_Code/
+    
     - name: Import / Generate Config File
       run: |
-        git clone https://github.com/Neurotoxin0/External_Config_File.git
-        mv ./External_Config_File/.config ./OP
+        mv ./Source_Code/.github/.config ./OP
         make defconfig
       # -----if no external config needed-----
       # run: |
