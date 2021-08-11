@@ -38,7 +38,7 @@
 - 目标系统 / Target: X86-64
 - 引导程序 / Boot Loader: EFI & BIOS
 - 内核大小 / Kernel Size: 16 mb
-- 磁盘大小e / Rom Siz: 1024 mb
+- 磁盘大小 / Rom Size: 1024 mb
 + 默认 IP / Default IP: 192.168.31.2
 + 默认用户名 / Default Username: root
 + 默认密码 / Default Password: password
