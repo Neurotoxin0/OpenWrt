@@ -1,4 +1,4 @@
-# Lean's OpenWrt source with extra packages from kenzok8
+# Lean's OpenWrt source with kenzok8's extra packages
 
 [1]: https://img.shields.io/badge/Issue-Welcome-brightgreen
 [2]: https://github.com/Neurotoxin0/OpenWrt/issues/new
