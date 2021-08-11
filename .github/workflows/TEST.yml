@@ -1,8 +1,9 @@
 name: TEST
 
 on:
-  watch:
-    types: started
+  push:
+    branches: 
+      - master
 
 jobs:
   build:
