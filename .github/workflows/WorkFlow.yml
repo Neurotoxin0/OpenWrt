@@ -19,7 +19,7 @@ on:
   schedule:
     - cron: 0 */48 * * *  
   #watch:
-  #types: started
+  #  types: started
 
 jobs:
   build:
@@ -152,19 +152,19 @@ jobs:
         name: Firmware-EFI
         path: ./firmware/EFI
 
-    - name: Deliver packageS
+    - name: Deliver packages
       uses: actions/upload-artifact@v2
       with:
         name: Packages
         path: ./packages
 
     - name: Upload release asset
-      if: github.event == 'release'
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: ./firmware/*
+        file: ./firmware/All/*
         tag: ${{ github.ref }}
+        overwrite: true
         file_glob: true
         
           
