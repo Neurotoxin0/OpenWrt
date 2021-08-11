@@ -11,7 +11,7 @@ jobs:
     steps:
     - name: Get Date / 获取当前日期
       id: date
-      run: echo "::set-output name=date::$(date + '%Y%m%d')"
+      run: echo "::set-output name=date::$(date "+%Y%m%d")"
     
     - name: Output
       run: echo "${{ steps.date.outputs.date }}"
