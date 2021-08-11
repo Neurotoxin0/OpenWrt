@@ -101,33 +101,61 @@ jobs:
         du -h --max-depth=1 ./bin
      
     - name: Prepare Deliver Files
+      # buildinfo: only contain buildinfo and manifest files
+      # firmware/All: All files in dir 'targets'
+      # firmware/BIOS: img &vmdk files for BIOS firmware
+      # firmware/EFI: imf &vmdk files for EFI firmware
+      # packages: compiled '.ipk' files
       run: |
         mkdir buildinfo
         mv $(find ./OP/bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") ./buildinfo
 
         mkdir firmware
         rm -rf $(find ./OP/bin/targets/ -type d -name "packages")
-        mv $(find ./OP/bin/targets/ -type f) ./firmware
+        
+        cd firmware 
+        mkdir All
+        cp -rf $(find ../OP/bin/targets/ -type f) ./All
+        cp -rf ../buildinfo/ ./All
+        
+        mkdir BIOS
+        mv $(find ../OP/bin/targets/ -type f -name "openwrt-x86-64-generic-squashfs-combined.*") ./BIOS
+        
+        mkdir EFI
+        mv $(find ./OP/bin/targets/ -type f -name "openwrt-x86-64-generic-squashfs-combined-efi.*") ./EFI
 
+        cd ../
         mkdir packages
         mv $(find ./OP/bin/packages/ -type f -name "*.ipk") ./packages
 
     - name: Deliver buildinfo
       uses: actions/upload-artifact@v2
       with:
-        name: OpenWrt_buildinfo
+        name: Buildinfo
         path: ./buildinfo
 
-    - name: Deliver firmware
+    - name: Deliver Dir 'Target'
       uses: actions/upload-artifact@v2
       with:
-        name: OpenWrt_firmware
-        path: ./firmware
+        name: Firmware
+        path: ./firmware/All
+    
+    - name: Deliver BIOS firmware
+      uses: actions/upload-artifact@v2
+      with:
+        name: Firmware-BIOS
+        path: ./firmware/BIOS
 
-    - name: Deliver package
+    - name: Deliver EFI firmware
       uses: actions/upload-artifact@v2
       with:
-        name: OpenWrt_package
+        name: Firmware-EFI
+        path: ./firmware/EFI
+
+    - name: Deliver packageS
+      uses: actions/upload-artifact@v2
+      with:
+        name: Packages
         path: ./packages
 
     - name: Upload release asset
