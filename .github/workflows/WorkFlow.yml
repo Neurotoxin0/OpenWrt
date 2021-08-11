@@ -127,7 +127,7 @@ jobs:
         mv $(find ../OP/bin/targets/ -type f -name "openwrt-x86-64-generic-squashfs-combined.*") ./BIOS
         
         mkdir EFI
-        mv $(find ./OP/bin/targets/ -type f -name "openwrt-x86-64-generic-squashfs-combined-efi.*") ./EFI
+        mv $(find ../OP/bin/targets/ -type f -name "openwrt-x86-64-generic-squashfs-combined-efi.*") ./EFI
 
         cd ../
         mkdir packages
