@@ -1,0 +1,25 @@
+name: TEST
+
+on:
+  watch:
+    types: started
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        path: ./Source_Code/
+        
+    - name: List Dirs
+      run: |
+        echo "Current Dir:"
+        pwd
+        echo "-------------------------------------------------"
+        df -h
+        echo "-------------------------------------------------"
+    
+    
