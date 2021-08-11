@@ -35,10 +35,14 @@
 
 ----
 
-- Target / 目标系统: X86-64
-- Boot Loader / 引导程序: EFI & BIOS
-- Kernel Size / 内核大小: 16 mb
-- Rom Size / 磁盘大小: 1024 mb
-+ Default IP / 默认 IP: 192.168.31.2
-+ Default Username / 默认用户名: root
-+ Default Password / 默认密码: password
+- 目标系统 / Target: X86-64
+- 引导程序 / Boot Loader: EFI & BIOS
+- 内核大小 / Kernel Size: 16 mb
+- 磁盘大小e / Rom Siz: 1024 mb
++ 默认 IP / Default IP: 192.168.31.2
++ 默认用户名 / Default Username: root
++ 默认密码 / Default Password: password
+
+----
++ 考虑到img文件过大，建议从工作流中下载对应的zip文件后解压(~ 110 mb) 
++ Considering the size of the img file, it is recommended to download the corresponding zip file from the workflow and unzip it (~ 110mb)
