@@ -1,4 +1,4 @@
-# Lean's OpenWrt source with kenzok8's extra packages
+# 基于Leon的源码以及Kenzok8提供的附加软件源编译的OpenWrt固件 | Lean's OpenWrt source with extra packages provided by Kenzok8
 
 [1]: https://img.shields.io/badge/Issue-Welcome-brightgreen
 [2]: https://github.com/Neurotoxin0/OpenWrt/issues/new
@@ -19,7 +19,7 @@
 ## 源码 & 组件来源 / Source Codes & Packages Contributer：
 + [![Lean](https://img.shields.io/badge/OpenWrt%20Source%20Code-Lean-brightgreen?style=flat-square&logo=appveyor)](https://github.com/coolsnowwolf/lede) 
 + [![Kenzok8](https://img.shields.io/badge/OpenWrt%20Extra%20Packages-Kenzok8-brightgreen?style=flat-square&logo=appveyor)](https://github.com/kenzok8/openwrt-packages) 
-+ [![Esirplayground](https://img.shields.io/badge/Github%20WorkFlow%20Auto%20Build-Esirplayground-brightgreen?style=flat-square&logo=appveyor)](https://github.com/esirplayground/AutoBuild-OpenWrt)
++ [![P3TERX](https://img.shields.io/badge/Github%20WorkFlow%20Auto%20Build-P3TERX-brightgreen?style=flat-square&logo=appveyor)](https://github.com/P3TERX/Actions-OpenWrt)
 
 ----
 
@@ -32,6 +32,9 @@
 
 - 每48小时自动更新, 支持发布 & 修改源码时自动更新; 仅编译自用学习
 - Update every 48 hours, support auto-update when source codes are being published or altered; only compile for self-use & learning
+
+- 发布的固件 & 工作流将被保留最新的7个版本(2周)
+- Releases & WorkFlows will be kept with the 7 latest versions (2 weeks)
 
 ----
 
