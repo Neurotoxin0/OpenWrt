@@ -31,8 +31,8 @@
   + uHTTPd, Unblockmusic, UU Game Booster, VerySync(limited), KMS Server, VSFTPD, 
   + Wifi Schedule, WOL, XunLei Accelerator, ZeroTier
 
-- 每48小时自动更新, 支持发布 & 修改源码时自动更新; 仅编译自用学习
-- Update every 48 hours, support auto-update when source codes are being published or altered; only compile for self-use & learning
+- 每48小时自动更新, 支持发布 & 修改源码时自动更新
+- Update every 48 hours, support auto-update when source codes are being published or altered
 
 - 发布的固件 & 工作流将被保留最新的7个版本(2周)
 - Releases & WorkFlows will be kept with the 7 latest versions (2 weeks)
