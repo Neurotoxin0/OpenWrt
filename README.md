@@ -17,8 +17,6 @@
 [![Actions][5]][6]
 [![Releases][7]][8]
 
-----
-
 ## 源码 & 组件来源 / Source Codes & Packages Contributer：
 + [![Lean](https://img.shields.io/badge/OpenWrt%20Source%20Code-Lean-brightgreen?style=flat-square&logo=appveyor)](https://github.com/coolsnowwolf/lede) 
 + [![Kenzok8](https://img.shields.io/badge/OpenWrt%20Extra%20Packages-Kenzok8-brightgreen?style=flat-square&logo=appveyor)](https://github.com/kenzok8/openwrt-packages) 
