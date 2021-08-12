@@ -28,7 +28,7 @@
 - Packages compiled include but not limited to: 
   + ADByBy Plus, ADGuardHome, Advanced, Argon New(Theme), ARP-Bind, Auto Reboot
   + Baidu-PCS, Commands, iFit(Theme), OpenClash, QOS, Serverchan, Flow Offload, 
-  + uHTTPd, unblockmusic, UU Game Booster, VerySync(limited), KMS Server, VSFTPD, 
+  + uHTTPd, Unblockmusic, UU Game Booster, VerySync(limited), KMS Server, VSFTPD, 
   + Wifi Schedule, WOL, XunLei Accelerator, ZeroTier
 
 - 每48小时自动更新, 支持发布 & 修改源码时自动更新; 仅编译自用学习
