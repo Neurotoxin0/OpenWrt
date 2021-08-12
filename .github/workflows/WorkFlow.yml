@@ -97,11 +97,6 @@ jobs:
       run: |
         echo -e "$(($(nproc)+1)) thread compile"
         make -j$(($(nproc)+1)) || make -j1 V=s
-        echo "------------------------"
-        echo "Lising Dir:"
-        echo "------------------------"
-        du -h 
-        echo "------------------------"
      
     - name: Prepare Deliver Files / 准备导出文件
       # buildinfo: only contain buildinfo and manifest files / 仅包含输出配置
