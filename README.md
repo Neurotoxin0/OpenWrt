@@ -1,4 +1,7 @@
-# 基于Leon的源码以及Kenzok8提供的附加软件源编译的OpenWrt固件 | Lean's OpenWrt source with extra packages provided by Kenzok8
+# 基于Leon的源码及Kenzok8提供的附加软件源编译的OpenWrt固件
+# Lean's OpenWrt source with extra packages provided by Kenzok8
+
+----
 
 [1]: https://img.shields.io/badge/Issue-Welcome-brightgreen
 [2]: https://github.com/Neurotoxin0/OpenWrt/issues/new
@@ -47,5 +50,5 @@
 + 默认密码 / Default Password: password
 
 ----
-+ 考虑到img文件过大，建议从工作流中下载对应的zip文件后解压(~ 110 mb) 
-+ Considering the size of the img file, it is recommended to download the corresponding zip file from the workflow and unzip it (~ 110mb)
+- 考虑到img文件过大，建议从工作流中下载对应的zip文件后解压(~ 110 mb) 
+- Considering the size of the img file, it is recommended to download the corresponding zip file from the workflow and unzip it (~ 110mb)
