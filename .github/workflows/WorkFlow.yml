@@ -112,14 +112,18 @@ jobs:
       run: |
         mkdir buildinfo
         mv $(find ./OP/bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") ./buildinfo
+        
+        mkdir packages
+        mv $(find ./OP/bin/packages/ -type f -name "*.ipk") ./packages
 
         mkdir firmware
         rm -rf $(find ./OP/bin/targets/ -type d -name "packages")
-        
+
         cd firmware 
         mkdir All
         cp -rf $(find ../OP/bin/targets/ -type f) ./All
-        cp -rf ../buildinfo/ ./All
+        cp -rf ../buildinfo ./All
+        cp -rf ../packages ./All
         
         mkdir BIOS
         mv $(find ../OP/bin/targets/ -type f -name "openwrt-x86-64-generic-squashfs-combined.*") ./BIOS
@@ -127,20 +131,22 @@ jobs:
         mkdir EFI
         mv $(find ../OP/bin/targets/ -type f -name "openwrt-x86-64-generic-squashfs-combined-efi.*") ./EFI
 
-        cd ../
-        mkdir packages
-        mv $(find ./OP/bin/packages/ -type f -name "*.ipk") ./packages
-
     - name: Deliver buildinfo / 传输输出配置
       uses: actions/upload-artifact@v2
       with:
         name: Buildinfo
         path: ./buildinfo
 
-    - name: Deliver Dir 'Targets' / 传输所有输出文件
+    - name: Deliver packages / 传输软件包
       uses: actions/upload-artifact@v2
       with:
-        name: Firmware
+        name: Packages
+        path: ./packages
+
+    - name: Deliver all compiled files / 传输所有输出文件
+      uses: actions/upload-artifact@v2
+      with:
+        name: All Compiled Files
         path: ./firmware/All
     
     - name: Deliver BIOS firmware / 传输 BIOS 引导固件
@@ -155,14 +161,8 @@ jobs:
         name: Firmware-EFI
         path: ./firmware/EFI
 
-    - name: Deliver packages / 传输软件包
-      uses: actions/upload-artifact@v2
-      with:
-        name: Packages
-        path: ./packages
-
     - name: Get Date / 获取当前日期
-      id: date
+      id: getdate
       run: echo "::set-output name=date::$(date "+%Y%m%d")"
     
     - name: Upload release asset / 自动发布至 Releases
@@ -170,7 +170,7 @@ jobs:
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: ./firmware/All/*
-        tag: ${{ steps.date.outputs.date }}
+        tag: ${{ steps.getdate.outputs.date }}
         overwrite: true
         file_glob: true
 
