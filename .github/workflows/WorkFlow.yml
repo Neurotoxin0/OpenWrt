@@ -4,7 +4,7 @@
 # Author: kenzo; coolsnowwolf; KFERMercer
 # Altered by: Neurotoxin0
 #
-# Copyright (C) 2019 P3TERX
+# Copyright (C) 2019-2020 P3TERX
 #
 # Copyright (C) 2020 KFERMercer
 #=================================================
@@ -27,7 +27,7 @@ jobs:
     name: Compile Openwrt Firmware / 固件编译
     runs-on: ubuntu-latest
     
-    if: github.event.repository.owner.id == github.event.sender.id
+    if: github.event.repository.owner.id == github.event.sender.id  # Only Star from reppsitory owner may trigger
     
     steps:
     - name: Init / 初始化
@@ -35,7 +35,7 @@ jobs:
         DEBIAN_FRONTEND: noninteractive
       run: |
         docker rmi `docker images -q`
-        sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
+        sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d /usr/local/lib/android /opt/ghc
         sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php* android*
         sudo -E apt-get update
         sudo -E apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs gcc-multilib g++-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler antlr3 gperf swig
@@ -61,7 +61,7 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
-    - name: Clone Config File
+    - name: Clone Config File / 克隆配置文件
       uses: actions/checkout@v2
       with:
         path: ./Source_Code/
@@ -87,8 +87,11 @@ jobs:
       run: |
         make download -j8
         make download -j8
+        echo "------------------------"
+        find dl -size -1024c -exec ls -l {} \;
+        echo "------------------------"
         find dl -size -1024c -exec rm -f {} \;
-
+    
     - name: Compile Firmware / 开始编译
       working-directory: ./OP
       run: |
@@ -170,3 +173,19 @@ jobs:
         tag: ${{ steps.date.outputs.date }}
         overwrite: true
         file_glob: true
+
+    - name: Delete workflow runs / 删除过期的工作流
+      uses: GitRML/delete-workflow-runs@main
+      with:
+        token: ${{ github.token }}
+        repository: ${{ github.repository }}
+        retain_days: 90
+        keep_minimum_runs: 7
+
+    - name: Remove old Releases / 删除过期的发布
+      uses: dev-drprasad/delete-older-releases@v0.1.0
+      with:
+        keep_latest: 7
+        delete_tags: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
