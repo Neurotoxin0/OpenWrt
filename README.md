@@ -48,5 +48,8 @@
 + 默认密码 / Default Password: password
 
 ----
+#### [WorkFlow / 点我跳转至工作流](https://github.com/Neurotoxin0/OpenWrt/actions "WorkFlow / 工作流")
++ For BuildInfo and compiled luci packages, please visit the workflow
++ 如需了解固件配置信息以及编译好的luci软件包，请转至工作流。
 - 考虑到img文件过大，建议从工作流中下载对应的zip文件后解压(~ 110 mb) 
 - Considering the size of the img file, it is recommended to download the corresponding zip file from the workflow and unzip it (~ 110mb)
