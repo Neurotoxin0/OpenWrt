@@ -31,8 +31,8 @@
   + KMS Server, OpenClash, QOS, Serverchan, uHTTPd, Unblockmusic, UU Game Booster, 
   + VerySync(limited), VSFTPD, Wifi Schedule, WOL, XunLei Accelerator, ZeroTier
 
-- 每24小时自动更新, 支持发布 & 修改源码时自动更新
-- Update every 24 hours, support auto-update when source codes are being published or altered
+- 每48小时自动更新, 支持发布 & 修改源码时自动更新
+- Update every 48 hours, support auto-update when source codes are being published or altered
 
 - 发布的固件 & 工作流将被保留最新的7个版本(2周)
 - Releases & WorkFlows will be kept with the 7 latest versions (2 weeks)
