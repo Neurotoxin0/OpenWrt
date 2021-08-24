@@ -15,6 +15,8 @@
 [![PRs Welcome][3]][4]
 [![Actions][5]][6]
 [![Releases][7]][8]
+- [中文版](https://github.com/Neurotoxin0/OpenWrt/blob/master/README.md "中文版")
+
 
 ## Source Codes & Packages Contributer：
 + [![Lean](https://img.shields.io/badge/OpenWrt%20Source%20Code-Lean-brightgreen?style=flat-square&logo=appveyor)](https://github.com/coolsnowwolf/lede) 

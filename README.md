@@ -15,6 +15,7 @@
 [![欢迎Pull Request][3]][4]
 [![工作流][5]][6]
 [![固件发布][7]][8]
+- [English Version](https://github.com/Neurotoxin0/OpenWrt/blob/master/README_EN.md "English Version")
 
 ## 源码 & 组件来源
 + [![Lean](https://img.shields.io/badge/OpenWrt%20Source%20Code-Lean-brightgreen?style=flat-square&logo=appveyor)](https://github.com/coolsnowwolf/lede) 
