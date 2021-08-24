@@ -30,6 +30,11 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id  # Only Star from reppsitory owner may trigger
     
     steps:
+    - name: Cancel Other Workflows / 取消除当前以外其他的工作流
+      uses: styfle/cancel-workflow-action@0.9.1
+      with:
+        access_token: ${{ github.token }}
+
     - name: Init / 初始化
       env:
         DEBIAN_FRONTEND: noninteractive
