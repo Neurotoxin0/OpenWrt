@@ -25,10 +25,10 @@
 ----
 
 + 固件包括但不限于以下程序: 
-  + ADByBy Plus, ADGuardHome, Advanced, Argon New(Theme), ARP-Bind, Auto Reboot,
-  + Baidu-PCS, Commands, DNSMASQ(FULL, DHCP V6, Trusted), Flow Offload, iFit(Theme), 
-  + KMS Server, OpenClash, QOS, Serverchan, uHTTPd, Unblockmusic, UU Game Booster, 
-  + VerySync(limited), VSFTPD, Wifi Schedule, WOL, XunLei Accelerator, ZeroTier
+  + ADBlock, ADByBy Plus, ADGuardHome, Advanced, Argon New(Theme), Argon Config, AliyunDrive, ARP-Bind, Auto Reboot,
+  + Baidu-PCS, Commands, DNSMASQ(FULL, DHCP V6, Trusted), Flow Offload, iFit(Theme), KMS Server, OpenClash, QOS, 
+  + Serverchan, uHTTPd, Unblockmusic, UU Game Booster, VerySync(limited), VM-Tools, VSFTPD, Wifi Schedule, WOL, 
+  + XunLei Accelerator, ZeroTier
 
 - 每24小时自动更新, 支持发布 & 修改源码时自动更新
 - 发布的固件 & 工作流将被保留最新的7个版本(2周)

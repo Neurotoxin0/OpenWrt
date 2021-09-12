@@ -57,8 +57,7 @@ jobs:
         echo "src-git ssrp https://github.com/fw876/helloworld.git" >> ./feeds.conf.default
         echo "src-git kenzo https://github.com/kenzok8/openwrt-packages.git" >> ./feeds.conf.default
         echo "src-git small https://github.com/kenzok8/small.git" >> ./feeds.conf.default
-        cd package
-        git clone https://github.com/kenzok8/openwrt-packages.git
+        echo "src-git aliyundrive https://github.com/messense/aliyundrive-webdav/tree/main/openwrt/aliyundrive-webdav"
 
     - name: Feeds Update & Install / 更新并安装Feeds
       working-directory: ./OP
