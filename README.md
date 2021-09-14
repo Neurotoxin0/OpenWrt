@@ -17,6 +17,7 @@
 [![固件发布][7]][8]
 - [English Version](https://github.com/Neurotoxin0/OpenWrt/blob/master/README_EN.md "English Version")
 
+
 ## 源码 & 组件来源
 + [![Lean](https://img.shields.io/badge/OpenWrt%20Source%20Code-Lean-brightgreen?style=flat-square&logo=appveyor)](https://github.com/coolsnowwolf/lede) 
 + [![Kenzok8](https://img.shields.io/badge/OpenWrt%20Extra%20Packages-Kenzok8-brightgreen?style=flat-square&logo=appveyor)](https://github.com/kenzok8/openwrt-packages) 
@@ -46,5 +47,5 @@
 ----
 
 + 如需了解固件配置信息以及编译好的luci软件包，请转至工作流。
-- 考虑到img文件过大，建议从工作流中下载对应的zip文件后解压(~ 110 mb) 
+- 考虑到img文件过大，建议从工作流中下载对应的zip文件后解压(~ 300 mb) 
 + [点我跳转至工作流](https://github.com/Neurotoxin0/OpenWrt/actions "工作流")

@@ -26,10 +26,10 @@
 ----
 
 + Packages compiled include but not limited to: 
-  + ADByBy Plus, ADGuardHome, Advanced, Argon New(Theme), ARP-Bind, Auto Reboot,
-  + Baidu-PCS, Commands, DNSMASQ(FULL, DHCP V6, Trusted), Flow Offload, iFit(Theme), 
-  + KMS Server, OpenClash, QOS, Serverchan, uHTTPd, Unblockmusic, UU Game Booster, 
-  + VerySync(limited), VSFTPD, Wifi Schedule, WOL, XunLei Accelerator, ZeroTier
+  + ADByBy Plus, ADGuardHome, Advanced, Argon Config, Argon New(Theme), ARP-Bind, Auto Reboot, 
+  + Commands, DNSMASQ(FULL), Docker, Flow Offload, KMS Server, OpenClash, Passwall, QOS, 
+  + Serverchan, Softenthervpn, SSR Plus, UDP2Raw, uHTTPd, Unblockmusic, UU Game Booster, 
+  + VerySync(limited), VM-Tools, VSFTPD, Wifi Schedule, WOL, XunLei Accelerator, ZeroTier
 
 - Update every 24 hours, support auto-update when source codes are being published or altered
 - Releases & WorkFlows will be kept with the 7 latest versions (2 weeks)
@@ -47,5 +47,5 @@
 ----
 
 + For BuildInfo and compiled luci packages, please visit the workflow
-- Considering the size of the img file, it is recommended to download the corresponding zip file from the workflow and unzip it (~ 110mb)
+- Considering the size of the img file, it is recommended to download the corresponding zip file from the workflow and unzip it (~ 300 mb)
 + [WorkFlow](https://github.com/Neurotoxin0/OpenWrt/actions "WorkFlow")
