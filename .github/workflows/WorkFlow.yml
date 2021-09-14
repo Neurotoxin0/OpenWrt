@@ -58,7 +58,6 @@ jobs:
         echo "src-git kenzo https://github.com/kenzok8/openwrt-packages.git" >> ./feeds.conf.default
         echo "src-git small https://github.com/kenzok8/small.git" >> ./feeds.conf.default
         cd package
-        git clone https://github.com/halldong/luci-app-speederv2.git
         git clone https://github.com/sensec/openwrt-udp2raw.git
         git clone https://github.com/sensec/luci-app-udp2raw.git
 
@@ -93,7 +92,7 @@ jobs:
     - name: Download Make File / 下载编译库
       working-directory: ./OP
       run: |
-        make download -j32
+        make download -j16
         make download -j8
         echo "------------------------"
         find dl -size -1024c -exec ls -l {} \;
