@@ -11,16 +11,16 @@
 name: Project Openwrt CL
 
 on: 
-  push:
-    branches: 
-      - master     
+  #push:
+  #  branches: 
+  #    - master     
   schedule:
     - cron: 0 */48 * * * 
   workflow_dispatch: 
   #release:
   #  types: [published]
-  watch:
-    types: started
+  #watch:
+  #  types: started
 
 jobs:
   build:
