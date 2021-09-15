@@ -11,12 +11,7 @@
 name: < TEST >
 
 on: 
-  #push:
-  #  branches: 
-  #    - master     
   workflow_dispatch: 
-  watch:
-    types: started
 
 jobs:
   build:
