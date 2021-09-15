@@ -8,24 +8,15 @@
 #
 # Copyright (C) 2020 KFERMercer
 #=================================================
-#    - name: Cancel Other Workflows / 取消除当前以外其他的工作流
-#      uses: styfle/cancel-workflow-action@0.9.1
-#      with:
-#        access_token: ${{ github.token }}
-#=================================================
-name: Project Openwrt CL
+name: TEST > Project Openwrt CL < TEST
 
 on: 
   #push:
   #  branches: 
   #    - master     
-  schedule:
-    - cron: 0 */48 * * * 
   workflow_dispatch: 
-  #release:
-  #  types: [published]
-  #watch:
-  #  types: started
+  watch:
+    types: started
 
 jobs:
   build:
@@ -39,13 +30,9 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        docker rmi `docker images -q`
-        sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d /usr/local/lib/android /opt/ghc
         sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php* android*
         sudo -E apt-get update
         sudo -E apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs gcc-multilib g++-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler antlr3 gperf swig
-        sudo -E apt-get -y autoremove --purge
-        sudo -E apt-get clean
     
     - name: Clone Source Codes & Alter Feeds / 克隆源码并更改Feed列表
       env: 
@@ -76,13 +63,8 @@ jobs:
     - name: Import / Generate Config File / 导入或生成配置文件
       working-directory: ./OP 
       run: |
-        mv ../Source_Code/.github/.config ./
+        mv ../Source_Code/.github/.config_TEST ./.config
         make defconfig
-      # -----if no external config needed-----
-      # -----以下为采用默认配置而不导入外置配置-----
-      # run: |
-      #  cd OP
-      #  make menuconfig  
 
     - name: Personalized / 个性化命令
       working-directory: ./OP
@@ -106,11 +88,6 @@ jobs:
         make -j$(($(nproc)+1)) || make -j1 V=s
      
     - name: Prepare Deliver Files / 准备导出文件
-      # buildinfo: only contain buildinfo and manifest files / 仅包含输出配置
-      # firmware/All: All files in dir 'targets' / 包含所有输出文件&固件
-      # firmware/BIOS: img &vmdk files for BIOS firmware / 仅包含 BIOS 引导固件
-      # firmware/EFI: imf &vmdk files for EFI firmware / 仅包含 EFI 引导固件
-      # packages: compiled '.ipk' files / 包含所有已编译的 ipk 软件包
       run: |
         mkdir buildinfo
         mv $(find ./OP/bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") ./buildinfo
@@ -162,32 +139,3 @@ jobs:
       with:
         name: Firmware-EFI
         path: ./firmware/EFI
-
-    - name: Get Date / 获取当前日期
-      id: getdate
-      run: echo "::set-output name=date::$(date "+%Y%m%d")"
-    
-    - name: Upload release asset / 自动发布至 Releases
-      uses: svenstaro/upload-release-action@v2
-      with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: ./firmware/All/*
-        tag: ${{ steps.getdate.outputs.date }}
-        overwrite: true
-        file_glob: true
-
-    - name: Delete workflow runs / 删除过期的工作流
-      uses: GitRML/delete-workflow-runs@main
-      with:
-        token: ${{ github.token }}
-        repository: ${{ github.repository }}
-        retain_days: 90
-        keep_minimum_runs: 7
-
-    - name: Remove old Releases / 删除过期的发布
-      uses: dev-drprasad/delete-older-releases@v0.1.0
-      with:
-        keep_latest: 7
-        delete_tags: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
