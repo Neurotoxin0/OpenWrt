@@ -26,10 +26,11 @@
 ----
 
 + 固件包括但不限于以下程序: 
-  + ADByBy Plus, ADGuardHome, Advanced, Argon Config, Argon New(Theme), ARP-Bind, Auto Reboot, Commands, 
-  + DNSMASQ(FULL), Docker, Flow Offload, iFit(Theme), KMS Server, OpenClash, Passwall,  qbittorrent, QOS, 
-  + Serverchan, Softenthervpn, SSR Plus, UDP2Raw, UDPSpeeder, uHTTPd, Unblockmusic, UU Game Booster, 
-  + VerySync(limited), VM-Tools, VSFTPD, Wifi Schedule, WOL, XunLei Accelerator, ZeroTier
+  + ADByBy Plus, ADGuardHome, Advanced, Argon Config, Argon New(Theme), ARP-Bind, Auto Reboot, 
+  + Commands, DNSMASQ(FULL), Docker, Flow Offload, iFit(Theme), KMS Server, OpenClash, Passwall,
+  + qbittorrent, QOS, Serverchan, Softenthervpn, SSR Plus, UDP2Raw, UDPSpeeder, uHTTPd, 
+  + Unblockmusic, UU Game Booster, VerySync(limited), VM-Tools, VSFTPD, Wifi Schedule, WOL, 
+  + XunLei Accelerator, ZeroTier
 
 - 每24小时自动更新, 支持发布 & 修改源码时自动更新
 - 发布的固件 & 工作流将被保留最新的7个版本(2周)

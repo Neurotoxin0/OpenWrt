@@ -26,10 +26,11 @@
 ----
 
 + Packages compiled include but not limited to: 
-  + ADByBy Plus, ADGuardHome, Advanced, Argon Config, Argon New(Theme), ARP-Bind, Auto Reboot, Commands, 
-  + DNSMASQ(FULL), Docker, Flow Offload, iFit(Theme), KMS Server, OpenClash, Passwall,  qbittorrent, QOS, 
-  + Serverchan, Softenthervpn, SSR Plus, UDP2Raw, UDPSpeeder, uHTTPd, Unblockmusic, UU Game Booster, 
-  + VerySync(limited), VM-Tools, VSFTPD, Wifi Schedule, WOL, XunLei Accelerator, ZeroTier
+  + ADByBy Plus, ADGuardHome, Advanced, Argon Config, Argon New(Theme), ARP-Bind, Auto Reboot, 
+  + Commands, DNSMASQ(FULL), Docker, Flow Offload, iFit(Theme), KMS Server, OpenClash, Passwall,
+  + qbittorrent, QOS, Serverchan, Softenthervpn, SSR Plus, UDP2Raw, UDPSpeeder, uHTTPd, 
+  + Unblockmusic, UU Game Booster, VerySync(limited), VM-Tools, VSFTPD, Wifi Schedule, WOL, 
+  + XunLei Accelerator, ZeroTier
 
 - Update every 24 hours, support auto-update when source codes are being published or altered
 - Releases & WorkFlows will be kept with the 7 latest versions (2 weeks)
