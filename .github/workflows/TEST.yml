@@ -8,7 +8,7 @@
 #
 # Copyright (C) 2020 KFERMercer
 #=================================================
-name: TEST > Project Openwrt CL < TEST
+name: < TEST >
 
 on: 
   #push:
