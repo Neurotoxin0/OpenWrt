@@ -21,6 +21,11 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id  # Only Star from reppsitory owner may trigger
     
     steps:
+    - name: Clone Config File / 克隆配置文件
+      uses: actions/checkout@v2
+      with:
+        path: ./Source_Code/
+
     - name: Init / 初始化
       env:
         DEBIAN_FRONTEND: noninteractive
@@ -49,11 +54,6 @@ jobs:
       run: |
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-
-    - name: Clone Config File / 克隆配置文件
-      uses: actions/checkout@v2
-      with:
-        path: ./Source_Code/
     
     - name: Import / Generate Config File / 导入或生成配置文件
       working-directory: ./OP 
