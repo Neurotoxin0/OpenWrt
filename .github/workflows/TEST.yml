@@ -26,7 +26,6 @@ jobs:
       with:
         path: ./Source_Code/
 
-    steps:
     - name: Print .config
       run: |
       echo "------------------------"
@@ -59,7 +58,6 @@ jobs:
         git clone https://github.com/sensec/openwrt-udp2raw.git
         git clone https://github.com/sensec/luci-app-udp2raw.git
         git clone https://github.com/halldong/luci-app-speederv2.git
-
 
     - name: Feeds Update & Install / 更新并安装Feeds
       working-directory: ./OP
