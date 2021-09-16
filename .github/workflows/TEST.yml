@@ -26,6 +26,13 @@ jobs:
       with:
         path: ./Source_Code/
 
+    steps:
+    - name: Print .config
+      run: |
+      echo "------------------------"
+      cat ./Source_Code/.github/.config_TEST
+      echo "------------------------"
+
     - name: Init / 初始化
       env:
         DEBIAN_FRONTEND: noninteractive
