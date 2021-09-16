@@ -30,7 +30,7 @@ jobs:
     - name: Print .config
       run: |
       echo "------------------------"
-      cat ./Source_Code/.github/.config_TEST
+      echo ./Source_Code/.github/.config_TEST
       echo "------------------------"
 
     - name: Init / 初始化
