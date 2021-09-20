@@ -181,7 +181,7 @@ jobs:
       with:
         token: ${{ github.token }}
         repository: ${{ github.repository }}
-        retain_days: 90
+        retain_days: 30
         keep_minimum_runs: 7
 
     - name: Remove old Releases / 删除过期的发布
