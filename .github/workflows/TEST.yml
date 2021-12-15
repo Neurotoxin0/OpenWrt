@@ -51,10 +51,6 @@ jobs:
         echo "src-git ssrp https://github.com/fw876/helloworld.git" >> ./feeds.conf.default
         echo "src-git kenzo https://github.com/kenzok8/openwrt-packages.git" >> ./feeds.conf.default
         echo "src-git small https://github.com/kenzok8/small.git" >> ./feeds.conf.default
-        cd package
-        git clone https://github.com/sensec/openwrt-udp2raw.git
-        git clone https://github.com/sensec/luci-app-udp2raw.git
-        git clone https://github.com/halldong/luci-app-speederv2.git
 
     - name: Feeds Update & Install / 更新并安装Feeds
       working-directory: ./OP
