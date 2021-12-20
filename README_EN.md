@@ -41,7 +41,6 @@
 |Diskman|btrfs & lsblk|
 |DNSMASQ|FULL SET|
 |DockerMan*|Docker Helper; MODULE ONLY|
-|EasyMesh|Support mesh for multiple Openwrt router|
 |EQOS|Quality of Service module|
 |Flow Offload|Openwrt Official Hardware Accelerater|
 |iFit|Theme|
@@ -60,7 +59,7 @@
 |UU Game Booster|-|
 |VerySync|Limited Version; upgrade required before using|
 |VM-Tools|-|
-|VSFTPD|KMS Server|
+|Vlmcsd|KMS Server|
 |Wifi Schedule|-|
 |WOL|Wake on Lan|
 |XunLei Accelerator|-|

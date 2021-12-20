@@ -40,7 +40,6 @@
 |Diskman|btrfs & lsblk; 磁盘管理|
 |DNSMASQ|全功能版|
 |DockerMan*|Docker容器及图形化界面；仅模组|
-|EasyMesh|在多个Openwrt路由器间组成mesh网络|
 |EQOS|网速限速|
 |Flow Offload|Openwrt官方硬件级加速器|
 |iFit|主题|
@@ -59,7 +58,7 @@
 |UU Game Booster|富家子弟加速器|
 |VerySync|微力同步；使用前需更新|
 |VM-Tools|-|
-|VSFTPD|KMS 服务器|
+|Vlmcsd|KMS 服务器|
 |Wifi Schedule|无线排程|
 |WOL|网络唤醒|
 |XunLei Accelerator|迅雷快鸟|
