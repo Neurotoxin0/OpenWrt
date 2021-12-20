@@ -17,6 +17,7 @@
 [![Releases][7]][8]
 - [中文版](https://github.com/Neurotoxin0/OpenWrt/blob/master/README.md "中文版")
 
+----
 
 ## Source Codes & Packages Contributer：
 + [![Lean](https://img.shields.io/badge/OpenWrt%20Source%20Code-Lean-brightgreen?style=flat-square&logo=appveyor)](https://github.com/coolsnowwolf/lede) 
@@ -26,11 +27,44 @@
 ----
 
 + Packages compiled include but not limited to: 
-  + ADByBy Plus, ADGuardHome, Advanced, Argon Config, Argon New(Theme), ARP-Bind, Auto Reboot, 
-  + Commands, DNSMASQ(FULL), Docker, Flow Offload, iFit(Theme), KMS Server, OpenClash, Passwall,
-  + qbittorrent, QOS, Serverchan, Softenthervpn, SSR Plus, UDP2Raw, UDPSpeeder, uHTTPd, 
-  + Unblockmusic, UU Game Booster, VerySync(limited), VM-Tools, VSFTPD, Wifi Schedule, WOL, 
-  + XunLei Accelerator, ZeroTier
+
+|Name|Usage & Comment
+-|-
+|ADByBy Plus|Ad Blocker|
+|ADGuardHome|Ad Blocker|
+|Advanced|Advanced Toolset|
+|Argonne Config|Custom Config For "Argonne" Theme|
+|Argonne|Theme|
+|ARP-Bind|-|
+|Auto Reboot|-|
+|Commands|Custom Shell Command|
+|Diskman|btrfs & lsblk|
+|DNSMASQ|FULL SET|
+|DockerMan*|Docker Helper; MODULE ONLY|
+|EasyMesh|Support mesh for multiple Openwrt router|
+|EQOS|Quality of Service module|
+|Flow Offload|Openwrt Official Hardware Accelerater|
+|iFit|Theme|
+|Ipsec-vpnd|IPsec VPN Server|
+|MWAN3|Multiple WAN Support|
+|OpenClash|Support Protocol: Clash|
+|Passwall|Support Protocol & Component: Brook, ChinaDNS-NG, Hysteria, Kcptun, PDNSD, Socks5, SS, SSR, Trojan-Go, Trojan-Plus, V2ray, Xray; also with corresponding server-side support|
+|PushBot|Publish Service|
+|QBittorrent|Downloader; MODULE ONLY|
+|QOS|Quality of Service module|
+|Serverchan|Publish Service|
+|Softenthervpn|VPN Server with multiple protocol supports|
+|SSR Plus|Support Protocol & Component: Brook, ChinaDNS-NG, Kcptun, Socks5, SS, SSR, Trojan-Go, Trojan-Plus, V2ray, Xray; also with corresponding server-side support|
+|uHTTPd|HTTPS Support for Openwrt Interface|
+|Unblockmusic|-|
+|UU Game Booster|-|
+|VerySync|Limited Version; upgrade required before using|
+|VM-Tools|-|
+|VSFTPD|KMS Server|
+|Wifi Schedule|-|
+|WOL|Wake on Lan|
+|XunLei Accelerator|-|
+|ZeroTier|Virtual-Lan|
 
 - Update every 24 hours, support auto-update when source codes are being published or altered
 - Releases & WorkFlows will be kept with the 7 latest versions (2 weeks)
@@ -39,7 +73,7 @@
 
 - Target: X86-64
 - Boot Loader: EFI & BIOS
-- Kernel Size: 16 mb
+- Kernel Size: 64 mb
 - Rom Size: 1024 mb
 + Default IP: 192.168.31.2
 + Default Username: root

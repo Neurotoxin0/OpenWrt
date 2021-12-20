@@ -26,11 +26,44 @@
 ----
 
 + 固件包括但不限于以下程序: 
-  + ADByBy Plus, ADGuardHome, Advanced, Argon Config, Argon New(Theme), ARP-Bind, Auto Reboot, 
-  + Commands, DNSMASQ(FULL), Docker, Flow Offload, iFit(Theme), KMS Server, OpenClash, Passwall,
-  + qbittorrent, QOS, Serverchan, Softenthervpn, SSR Plus, UDP2Raw, UDPSpeeder, uHTTPd, 
-  + Unblockmusic, UU Game Booster, VerySync(limited), VM-Tools, VSFTPD, Wifi Schedule, WOL, 
-  + XunLei Accelerator, ZeroTier
+
+|名称|功能 & 描述
+-|-
+|ADByBy Plus|去广告|
+|ADGuardHome|去广告|
+|Advanced|高级工具组|
+|Argonne Config|"Argonne"主题的自定义配置|
+|Argonne|主题|
+|ARP-Bind|ARP绑定|
+|Auto Reboot|自动重启|
+|Commands|脚本(定时)执行面板|
+|Diskman|btrfs & lsblk; 磁盘管理|
+|DNSMASQ|全功能版|
+|DockerMan*|Docker容器及图形化界面；仅模组|
+|EasyMesh|在多个Openwrt路由器间组成mesh网络|
+|EQOS|网速限速|
+|Flow Offload|Openwrt官方硬件级加速器|
+|iFit|主题|
+|Ipsec-vpnd|IPsec VPN 服务端|
+|MWAN3|多Wan多拨支持|
+|OpenClash|支持的协议: Clash|
+|Passwall|支持的协议及组件: Brook, ChinaDNS-NG, Hysteria, Kcptun, PDNSD, Socks5, SS, SSR, Trojan-Go, Trojan-Plus, V2ray, Xray; 包括服务端支持|
+|PushBot|推送服务|
+|QBittorrent|下载器；仅模组|
+|QOS|网速限速|
+|Serverchan|推送服务|
+|Softenthervpn|VPN全家桶|
+|SSR Plus|支持的协议及组件: Brook, ChinaDNS-NG, Kcptun, Socks5, SS, SSR, Trojan-Go, Trojan-Plus, V2ray, Xray; 包括服务端支持|
+|uHTTPd|为Openwrt提供HTTPS加密|
+|Unblockmusic|多平台音乐解锁|
+|UU Game Booster|富家子弟加速器|
+|VerySync|微力同步；使用前需更新|
+|VM-Tools|-|
+|VSFTPD|KMS 服务器|
+|Wifi Schedule|无线排程|
+|WOL|网络唤醒|
+|XunLei Accelerator|迅雷快鸟|
+|ZeroTier|虚拟局域网软件|
 
 - 每24小时自动更新, 支持发布 & 修改源码时自动更新
 - 发布的固件 & 工作流将被保留最新的7个版本(2周)
@@ -39,7 +72,7 @@
 
 - 目标系统: X86-64
 - 引导程序: EFI & BIOS
-- 内核大小: 16 mb
+- 内核大小: 64 mb
 - 磁盘大小: 1024 mb
 + 默认 IP: 192.168.31.2
 + 默认用户名: root
