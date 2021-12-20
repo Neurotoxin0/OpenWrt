@@ -8,7 +8,10 @@
 #
 # Copyright (C) 2020 KFERMercer
 #=================================================
-name: < TEST >
+#
+#
+#=================================================
+name: < TEST 4 >
 
 on:
   #push:
@@ -61,7 +64,7 @@ jobs:
     - name: Import / Generate Config File / 导入或生成配置文件
       working-directory: ./OP 
       run: |
-        mv ../Source_Code/.github/.config_TEST ./.config
+        mv ../Source_Code/.github/.config_TEST4 ./.config
         make defconfig
 
     - name: Personalized / 个性化命令
