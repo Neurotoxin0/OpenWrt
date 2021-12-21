@@ -41,20 +41,18 @@
 |Diskman|btrfs & lsblk|
 |DNSMASQ|FULL SET|
 |DockerMan|Friendly Interface for "Docker"|
-|EQOS|Quality of Service module|
 |Flow Offload|Openwrt Official Hardware Accelerater|
 |iFit|Theme|
 |Ipsec-vpnd|IPsec VPN Server|
+|iStore|A ipk store contain many daily ipk|
 |MWAN3|Multiple WAN Support|
-|MWAN3 Helper|Friedndly Interface for "MWAN3"|
+|NetData|System Monitoring Software|
 |OpenClash|Support Protocol: Clash, ...|
 |Passwall|Support Protocol & Component: Brook, ChinaDNS-NG, Haproxy, Hysteria, Kcptun, NaiveProxy, PDNSD, Socks5, SS, SSR, Trojan-Go, Trojan-Plus, Xray; with corresponding server-side support|
-|PushBot|Publish Service|
-|QBittorrent|Downloader|
-|QOS|Quality of Service module|
 |Serverchan|Publish Service|
 |Softenthervpn|VPN Server with multiple protocol supports|
 |SSR Plus|Support Protocol & Component: Kcptun, NaiveProxy, Socks5, SS, SSR, Trojan, Xray; with SS/SSR server-side support|
+|Syncdial|MultiWan; MultiPPPOE; Multicasting|
 |uHTTPd|HTTPS Support for Openwrt Interface|
 |Unblockmusic|-|
 |UU Game Booster|-|

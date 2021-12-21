@@ -40,20 +40,18 @@
 |Diskman|btrfs & lsblk; 磁盘管理|
 |DNSMASQ|全功能版|
 |DockerMan|“Docker”容器及图形化界面|
-|EQOS|网速限速|
 |Flow Offload|Openwrt官方硬件级加速器|
 |iFit|主题|
 |Ipsec-vpnd|IPsec VPN 服务端|
+|iStore|包含许多常用ipk; 提供一键安装&更新的ipk商店|
 |MWAN3|多Wan多拨支持|
-|MWAN3 Helper|"MWAN3"及易用界面|
+|NetData|系统监控软件|
 |OpenClash|支持的协议: Clash, ...|
 |Passwall|支持的协议及组件: Brook, ChinaDNS-NG, Haproxy, Hysteria, Kcptun, NaiveProxy, PDNSD, Socks5, SS, SSR, Trojan-Go, Trojan-Plus, Xray; 包括服务端支持|
-|PushBot|推送服务|
-|QBittorrent|下载器|
-|QOS|网速限速|
 |Serverchan|推送服务|
 |Softenthervpn|VPN全家桶|
 |SSR Plus|支持的协议及组件: Kcptun, NaiveProxy, Socks5, SS, SSR, Trojan, Xray; 包括SS/SSR服务端支持|
+|Syncdial|多线多播|
 |uHTTPd|为Openwrt提供HTTPS加密|
 |Unblockmusic|多平台音乐解锁|
 |UU Game Booster|富家子弟加速器|
