@@ -40,20 +40,21 @@
 |Commands|Custom Shell Command|
 |Diskman|btrfs & lsblk|
 |DNSMASQ|FULL SET|
-|DockerMan*|Docker Helper; MODULE ONLY|
+|DockerMan|Friendly Interface for "Docker"|
 |EQOS|Quality of Service module|
 |Flow Offload|Openwrt Official Hardware Accelerater|
 |iFit|Theme|
 |Ipsec-vpnd|IPsec VPN Server|
 |MWAN3|Multiple WAN Support|
-|OpenClash|Support Protocol: Clash|
-|Passwall|Support Protocol & Component: Brook, ChinaDNS-NG, Hysteria, Kcptun, PDNSD, Socks5, SS, SSR, Trojan-Go, Trojan-Plus, V2ray, Xray; also with corresponding server-side support|
+|MWAN3 Helper|Friedndly Interface for "MWAN3"|
+|OpenClash|Support Protocol: Clash, ...|
+|Passwall|Support Protocol & Component: Brook, ChinaDNS-NG, Haproxy, Hysteria, Kcptun, NaiveProxy, PDNSD, Socks5, SS, SSR, Trojan-Go, Trojan-Plus, Xray; with corresponding server-side support|
 |PushBot|Publish Service|
-|QBittorrent|Downloader; MODULE ONLY|
+|QBittorrent|Downloader|
 |QOS|Quality of Service module|
 |Serverchan|Publish Service|
 |Softenthervpn|VPN Server with multiple protocol supports|
-|SSR Plus|Support Protocol & Component: Brook, ChinaDNS-NG, Kcptun, Socks5, SS, SSR, Trojan-Go, Trojan-Plus, V2ray, Xray; also with corresponding server-side support|
+|SSR Plus|Support Protocol & Component: Kcptun, NaiveProxy, Socks5, SS, SSR, Trojan, Xray; with SS/SSR server-side support|
 |uHTTPd|HTTPS Support for Openwrt Interface|
 |Unblockmusic|-|
 |UU Game Booster|-|
