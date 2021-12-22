@@ -40,6 +40,8 @@
 |Diskman|btrfs & lsblk; 磁盘管理|
 |DNSMASQ|全功能版|
 |DockerMan|“Docker”容器及图形化界面|
+|Edge|主题|
+|EQOS|网速限速|
 |Flow Offload|Openwrt官方硬件级加速器|
 |iFit|主题|
 |Ipsec-vpnd|IPsec VPN 服务端|
@@ -52,10 +54,12 @@
 |Softenthervpn|VPN全家桶|
 |SSR Plus|支持的协议及组件: Kcptun, NaiveProxy, Socks5, SS, SSR, Trojan, Xray; 包括SS/SSR服务端支持|
 |Syncdial|多线多播|
+|Ttyd|网页端终端|
 |uHTTPd|为Openwrt提供HTTPS加密|
 |Unblockmusic|多平台音乐解锁|
 |UU Game Booster|富家子弟加速器|
 |VerySync|微力同步；使用前需更新|
+|Vim-full|编辑器|
 |VM-Tools|-|
 |Vlmcsd|KMS 服务器|
 |Wifi Schedule|无线排程|

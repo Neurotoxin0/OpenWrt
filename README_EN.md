@@ -41,6 +41,8 @@
 |Diskman|btrfs & lsblk|
 |DNSMASQ|FULL SET|
 |DockerMan|Friendly Interface for "Docker"|
+|Edge|Theme|
+|EQOS|Quality of Service|
 |Flow Offload|Openwrt Official Hardware Accelerater|
 |iFit|Theme|
 |Ipsec-vpnd|IPsec VPN Server|
@@ -53,10 +55,12 @@
 |Softenthervpn|VPN Server with multiple protocol supports|
 |SSR Plus|Support Protocol & Component: Kcptun, NaiveProxy, Socks5, SS, SSR, Trojan, Xray; with SS/SSR server-side support|
 |Syncdial|MultiWan; MultiPPPOE; Multicasting|
+|Ttyd|Web-based terminal|
 |uHTTPd|HTTPS Support for Openwrt Interface|
 |Unblockmusic|-|
 |UU Game Booster|-|
 |VerySync|Limited Version; upgrade required before using|
+|Vim-full|-|
 |VM-Tools|-|
 |Vlmcsd|KMS Server|
 |Wifi Schedule|-|
