@@ -30,43 +30,54 @@
 
 |Name|Usage & Comment
 -|-
+|Access Control|-|
 |ADByBy Plus|Ad Blocker|
-|ADGuardHome|Ad Blocker|
+|ADGuardHome|Ad Blocker; with bin compiled|
 |Advanced|Advanced Toolset|
+|Argon Config|Custom Config For "Argon" Theme|
 |Argonne Config|Custom Config For "Argonne" Theme|
+|Argon|Theme|
 |Argonne|Theme|
 |ARP-Bind|-|
 |Auto Reboot|-|
 |Commands|Custom Shell Command|
-|Diskman|btrfs & lsblk|
+|DHCPv6|-|
+|Diskman|btrfs & lsblk & mdadm|
 |DNSMASQ|FULL SET|
-|DockerMan|Friendly Interface for "Docker"|
-|Edge|Theme|
 |EQOS|Quality of Service|
-|Flow Offload|Openwrt Official Hardware Accelerater|
+|File Transfer|-|
 |iFit|Theme|
 |Ipsec-vpnd|IPsec VPN Server|
-|iStore|A ipk store contain many daily ipk|
+|Ipv6 Support|-|
 |MWAN3|Multiple WAN Support|
+|Neobird|Theme|
 |NetData|System Monitoring Software|
+|Netlink Bandwidth Accounting|-|
 |OpenClash|Support Protocol: Clash, ...|
-|Passwall|Support Protocol & Component: Brook, ChinaDNS-NG, Haproxy, Hysteria, Kcptun, NaiveProxy, PDNSD, Socks5, SS, SSR, Trojan-Go, Trojan-Plus, Xray; with corresponding server-side support|
-|Serverchan|Publish Service|
+|Passwall|Support Protocol & Component: Client Side: All; Server Side: All but SSR server|
+|Passwall 2|Support Protocol & Component: Client Side: All; Server Side: All but SSR server|
+|PPPOE Relay|-|
+|PushBot|-|
+|QoS|Quality of Service|
+|Serverchan|Push Service|
+|Shortcut-FE / Flow Offload|Hardware Accelerator|
 |Softenthervpn|VPN Server with multiple protocol supports|
-|SSR Plus|Support Protocol & Component: Kcptun, NaiveProxy, Socks5, SS, SSR, Trojan, Xray; with SS/SSR server-side support|
+|SSR Plus|Support Protocol & Component: Client Side: All; Server Side: All but SSR server|
+|Store|A ipk store contain many daily ipk|
 |Syncdial|MultiWan; MultiPPPOE; Multicasting|
-|Ttyd|Web-based terminal|
+|TTYD|Web-based terminal|
 |uHTTPd|HTTPS Support for Openwrt Interface|
 |Unblockmusic|-|
+|UPNP|-|
 |UU Game Booster|-|
 |VerySync|Limited Version; upgrade required before using|
 |Vim-full|-|
 |VM-Tools|-|
 |Vlmcsd|KMS Server|
-|Wifi Schedule|-|
+|Wireguard|-|
 |WOL|Wake on Lan|
 |XunLei Accelerator|-|
-|ZeroTier|Virtual-Lan|
+|ZeroTier|Virtual-Lan Software|
 
 - Update every 24 hours, support auto-update when source codes are being published or altered
 - Releases & WorkFlows will be kept with the 7 latest versions (2 weeks)
