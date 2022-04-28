@@ -177,12 +177,12 @@ jobs:
         token: ${{ github.token }}
         repository: ${{ github.repository }}
         retain_days: 30
-        keep_minimum_runs: 7
+        keep_minimum_runs: 14
 
     - name: Remove old Releases / 删除过期的发布
       uses: dev-drprasad/delete-older-releases@v0.1.0
       with:
-        keep_latest: 7
+        keep_latest: 30
         delete_tags: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

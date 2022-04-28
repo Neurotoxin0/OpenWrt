@@ -79,8 +79,8 @@
 |XunLei Accelerator|-|
 |ZeroTier|Virtual-Lan Software|
 
-- Update every 24 hours, support auto-update when source codes are being published or altered
-- Releases & WorkFlows will be kept with the 7 latest versions (2 weeks)
+- Update every 24 hours
+- Releases & WorkFlows will be kept with the 30 latest versions (1 month)
 
 ----
 
