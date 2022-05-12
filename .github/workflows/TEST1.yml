@@ -63,7 +63,7 @@ jobs:
     - name: Import / Generate Config File / 导入或生成配置文件
       working-directory: ./OP 
       run: |
-        mv ../Source_Code/.github/.config_TEST1 ./.config
+        mv ../Source_Code/.github/TEST1.config ./.config
         make defconfig
 
     - name: Personalized / 个性化命令
