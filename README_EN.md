@@ -34,7 +34,7 @@
 |ADByBy Plus|Ad Blocker|
 |ADGuardHome|Ad Blocker; with bin compiled|
 |Advanced|Advanced Toolset|
-|Argon Config|Custom Config For "Argon" Theme|
+~~|Argon Config|Custom Config For "Argon" Theme|~~
 |Argonne Config|Custom Config For "Argonne" Theme|
 |Argon|Theme|
 |Argonne|Theme|
@@ -44,6 +44,7 @@
 |DHCPv6|-|
 |Diskman|btrfs & lsblk & mdadm|
 |DNSMASQ|FULL SET|
+|EasyMesh|-
 |EQOS|Quality of Service|
 |File Transfer|-|
 |iFit|Theme|
@@ -70,7 +71,7 @@
 |Unblockmusic|-|
 |UPNP|-|
 |UU Game Booster|-|
-|VerySync|Limited Version; upgrade required before using|
+~~|VerySync|Limited Version; upgrade required before using|~~
 |Vim-full|-|
 |VM-Tools|-|
 |Vlmcsd|KMS Server|

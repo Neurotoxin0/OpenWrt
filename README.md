@@ -34,7 +34,7 @@
 |ADByBy Plus|去广告|
 |ADGuardHome|去广告; 包括二进制文件|
 |Advanced|高级工具组|
-|Argon Config|"Argon"主题的自定义配置|
+~~|Argon Config|"Argon"主题的自定义配置|~~
 |Argonne Config|"Argonne"主题的自定义配置|
 |Argon|主题|
 |Argonne|主题|
@@ -44,6 +44,7 @@
 |DHCPv6|-|
 |Diskman|磁盘管理; btrfs & lsblk & mdadm|
 |DNSMASQ FULL|-|
+|EasyMesh|组件Mesh网络工具|
 |EQOS|网速限速|
 |File Transfer|文件传输|
 |iFit|主题|
@@ -70,7 +71,7 @@
 |Unblockmusic|多平台音乐解锁；双版本|
 |UPNP|-|
 |UU Game Booster|富家子弟加速器|
-|VerySync|微力同步；使用前需更新|
+~~|VerySync|微力同步；使用前需更新|~~
 |Vim-full|编辑器|
 |VM-Tools|-|
 |Vlmcsd|KMS 服务器|
