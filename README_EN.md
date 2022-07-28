@@ -1,88 +1,100 @@
-Welcome to Lean's git source of OpenWrt and packages
-=
+# Lean's OpenWrt source with extra packages provided by Kenzok8
 
-How to build your Openwrt firmware.
--
-Note:
---
-1. DO **NOT** USE **root** USER FOR COMPILING!!!
+----
 
-2. Users within China should prepare proxy before building.
+[1]: https://img.shields.io/badge/Issue-Welcome-brightgreen
+[2]: https://github.com/Neurotoxin0/OpenWrt/issues/new
+[3]: https://img.shields.io/badge/PRs-Welcome-brightgreen
+[4]: https://github.com/Neurotoxin0/OpenWrt/pulls
+[5]: https://img.shields.io/github/workflow/status/Neurotoxin0/OpenWrt/Project%20Openwrt%20CL
+[6]: https://github.com/Neurotoxin0/OpenWrt/actions
+[7]: https://img.shields.io/github/v/release/Neurotoxin0/OpenWrt
+[8]: https://github.com/Neurotoxin0/OpenWrt/releases
 
-3. Web admin panel default IP is 192.168.1.1 and default password is "password".
+[![Issue Welcome][1]][2]
+[![PRs Welcome][3]][4]
+[![Actions][5]][6]
+[![Releases][7]][8]
+- [中文版](https://github.com/Neurotoxin0/OpenWrt/blob/master/README.md "中文版")
 
-Let's start!
----
-1. First, install Ubuntu 64bit (Ubuntu 20.04 LTS x86 is recommended).
+----
 
-2. Run `sudo apt-get update` in the terminal, and then run
-    `
-    sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf wget curl swig rsync
-    `
+## Source Codes & Packages Contributer：
++ [![Lean](https://img.shields.io/badge/OpenWrt%20Source%20Code-Lean-brightgreen?style=flat-square&logo=appveyor)](https://github.com/coolsnowwolf/lede) 
++ [![Kenzok8](https://img.shields.io/badge/OpenWrt%20Extra%20Packages-Kenzok8-brightgreen?style=flat-square&logo=appveyor)](https://github.com/kenzok8/openwrt-packages) 
++ [![P3TERX](https://img.shields.io/badge/Github%20WorkFlow%20Auto%20Build-P3TERX-brightgreen?style=flat-square&logo=appveyor)](https://github.com/P3TERX/Actions-OpenWrt)
 
-3. Run `git clone https://github.com/coolsnowwolf/lede` to clone the source code, and then `cd lede` to enter the directory
+----
 
-4. ```bash
-   ./scripts/feeds update -a
-   ./scripts/feeds install -a
-   make menuconfig
-   ```
++ Packages compiled include but not limited to: 
 
-5. Run `make -j8 download V=s` to download libraries and dependencies (user in China should use global proxy when possible)
+|Name|Usage & Comment
+-|-
+|Access Control|-|
+|ADByBy Plus|Ad Blocker|
+|ADGuardHome|Ad Blocker; with bin compiled|
+|Advanced|Advanced Toolset|
+|~~Argon Config~~|~~Custom Config For "Argon" Theme~~|
+|Argonne Config|Custom Config For "Argonne" Theme|
+|Argon|Theme|
+|Argonne|Theme|
+|ARP-Bind|-|
+|Auto Reboot|-|
+|Commands|Custom Shell Command|
+|DHCPv6|-|
+|Diskman|btrfs & lsblk & mdadm|
+|DNSMASQ|FULL SET|
+|EasyMesh|-
+|EQOS|Quality of Service|
+|File Transfer|-|
+|iFit|Theme|
+|Ipsec-vpnd|IPsec VPN Server|
+|Ipv6 Support|-|
+|MWAN3|Multiple WAN Support|
+|Neobird|Theme|
+|NetData|System Monitoring Software|
+|Netlink Bandwidth Accounting|-|
+|OpenClash|Support Protocol: Clash, ...|
+|Passwall|Support Protocol & Component: Client Side: All; Server Side: All but SSR server|
+|Passwall 2|Support Protocol & Component: Client Side: All; Server Side: All but SSR server|
+|PPPOE Relay|-|
+|PushBot|-|
+|QoS|Quality of Service|
+|Serverchan|Push Service|
+|Shortcut-FE / Flow Offload|Hardware Accelerator|
+|Softenthervpn|VPN Server with multiple protocol supports|
+|SSR Plus|Support Protocol & Component: Client Side: All; Server Side: All but SSR server|
+|Store|A ipk store contain many daily ipk|
+|Syncdial|MultiWan; MultiPPPOE; Multicasting|
+|TTYD|Web-based terminal|
+|uHTTPd|HTTPS Support for Openwrt Interface|
+|Unblockmusic|-|
+|UPNP|-|
+|UU Game Booster|-|
+|~~VerySync~~|~~Limited Version; upgrade required before using~~|
+|Vim-full|-|
+|VM-Tools|-|
+|Vlmcsd|KMS Server|
+|Wireguard|-|
+|WOL|Wake on Lan|
+|XunLei Accelerator|-|
+|ZeroTier|Virtual-Lan Software|
 
-6. Run `make -j1 V=s` (integer following -j is the thread count, single-thread is recommended for the first build) to start building your firmware.
+- Update every 24 hours
+- Releases & WorkFlows will be kept with the 30 latest versions (1 month)
 
-This source code is promised to be compiled successfully.
+----
 
-You can use this source code freely, but please link this GitHub repository when redistributing. Thank you for your cooperation!
-=
+- Target: X86-64
+- Boot Loader: EFI & BIOS
+- Kernel Size: 64 mb
+- Rom Size: 1024 mb
++ Default IP: 192.168.50.1
++ Default Username: root
++ Default Password: password
 
-Rebuild:
-```bash
-cd lede
-git pull
-./scripts/feeds update -a && ./scripts/feeds install -a
-make defconfig
-make -j8 download
-make -j$(($(nproc) + 1)) V=s
-```
+----
 
-If reconfiguration is need:
-```bash
-rm -rf ./tmp && rm -rf .config
-make menuconfig
-make -j$(($(nproc) + 1)) V=s
-```
-
-Build result will be produced to `bin/targets` directory.
-
-Special tips:
-------
-1. This source code doesn't contain any backdoors or close source applications that can monitor/capture your HTTPS traffic, SSL is the final castle of cyber security. Safety is what a firmware should achieve.
-
-2. If you have any technical problem, you may join the QQ discussion group: 297253733, link: click [here](https://jq.qq.com/?_wv=1027&k=5yCRuXL)
-
-3. Want to learn OpenWrt development but don't know how? Can't motivate yourself for self-learning? Not enough fundamental knowledge? Learn OpenWrt development with Mr. Zuo through his Beginner OpenWrt Training Course. Click [here](http://forgotfun.org/2018/04/openwrt-training-2018.html) to register.
-
-## Router Recommendation
-Not Sponsored: If you are finding a low power consumption, small and performance promising x86/x64 router, I personally recommend the 
-EZPROv1 Alumium Edition (N3710 4000M): [Details](https://item.taobao.com/item.htm?spm=a230r.1.14.20.144c763fRkK0VZ&id=561126544764)
-
-![xm1](doc/xm5.jpg)
-![xm2](doc/xm6.jpg)
-
-## Donation
-
-If this project does help you, please consider donating to support the development of this project.
-
-### Alipay
-
-![alipay](doc/alipay_donate.jpg)
-
-### WeChat
-
-![wechat](doc/wechat_donate.jpg)
-
-## Note: Addition Lean's private package source code in `./package/lean` directory. Use it under GPL v3.
-
-## GPLv3 is compatible with more licenses than GPLv2: it allows you to make combinations with code that has specific kinds of additional requirements that are not in GPLv3 itself. Section 7 has more information about this, including the list of additional requirements that are permitted.
++ For BuildInfo and compiled luci packages, please visit the workflow
+- Considering the size of the img file, it is recommended to download the corresponding zip file from the workflow and unzip it (~ 300 mb)
++ [WorkFlow](https://github.com/Neurotoxin0/OpenWrt/actions "WorkFlow")

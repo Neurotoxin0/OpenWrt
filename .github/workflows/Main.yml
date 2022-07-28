@@ -1,0 +1,188 @@
+#=================================================
+# Description: Github Workflow for Project Openwrt
+# Lisence: MIT
+# Author: kenzo; coolsnowwolf; KFERMercer; P3TERX
+# Altered by: Neurotoxin0
+#
+# Copyright (C) 2019-2020 P3TERX
+#
+# Copyright (C) 2020 KFERMercer
+#=================================================
+#    - name: Cancel Other Workflows / 取消除当前以外其他的工作流
+#      uses: styfle/cancel-workflow-action@0.9.1
+#      with:
+#        access_token: ${{ github.token }}
+#=================================================
+name: Project Openwrt CL
+
+on: 
+  #push:
+  #  branches: 
+  #    - master     
+  schedule:
+    - cron: 0 */48 * * * 
+  workflow_dispatch: 
+  #release:
+  #  types: [published]
+  #watch:
+  #  types: started
+
+jobs:
+  build:
+    name: Compile Openwrt Firmware / 固件编译
+    runs-on: ubuntu-latest
+    
+    if: github.event.repository.owner.id == github.event.sender.id  # Only Star from reppsitory owner may trigger
+    
+    steps:
+    - name: Init / 初始化
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
+        sudo -E apt-get -qq update
+        sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-2004)
+        sudo -E apt-get -qq autoremove --purge
+        sudo -E apt-get -qq clean
+        sudo timedatectl set-timezone "Asia/Shanghai"
+    
+    - name: Clone Source Codes & Alter Feeds / 克隆源码并更改Feed列表
+      env: 
+        REPO_URL: https://github.com/coolsnowwolf/lede
+        REPO_BRANCH: master 
+      run: |
+        git clone --depth 1 $REPO_URL -b $REPO_BRANCH ./OP
+        cd OP
+        echo "src-git kenzo https://github.com/kenzok8/openwrt-packages.git" >> ./feeds.conf.default
+        echo "src-git small https://github.com/kenzok8/small.git" >> ./feeds.conf.default
+
+
+    - name: Feeds Update & Install / 更新并安装Feeds
+      working-directory: ./OP
+      run: |
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
+
+    - name: Clone Config File / 克隆配置文件
+      uses: actions/checkout@v2
+      with:
+        path: ./Source_Code/
+    
+    - name: Import / Generate Config File / 导入或生成配置文件
+      working-directory: ./OP 
+      run: |
+        mv ../Source_Code/.github/.config ./
+        make defconfig
+      # -----if no external config needed-----
+      # -----以下为采用默认配置而不导入外置配置-----
+      # run: |
+      #  cd OP
+      #  make menuconfig  
+
+    - name: Personalized / 个性化命令
+      working-directory: ./OP
+      run: |
+        sed -i 's/192.168.1.1/192.168.50.1/g' ./package/base-files/files/bin/config_generate
+        
+    - name: Download Make File / 下载编译库
+      working-directory: ./OP
+      run: |
+        make download -j16
+        make download -j8
+        echo "------------------------"
+        find dl -size -1024c -exec ls -l {} \;
+        echo "------------------------"
+        find dl -size -1024c -exec rm -f {} \;
+    
+    - name: Compile Firmware / 开始编译
+      working-directory: ./OP
+      run: |
+        echo -e "$(($(nproc)+1)) thread compile"
+        make -j$(($(nproc)+1)) || make -j1 V=s
+     
+    - name: Prepare Deliver Files / 准备导出文件
+      # buildinfo: only contain buildinfo and manifest files / 仅包含输出配置
+      # firmware/All: All files in dir 'targets' / 包含所有输出文件&固件
+      # firmware/BIOS: img &vmdk files for BIOS firmware / 仅包含 BIOS 引导固件
+      # firmware/EFI: imf &vmdk files for EFI firmware / 仅包含 EFI 引导固件
+      # packages: compiled '.ipk' files / 包含所有已编译的 ipk 软件包
+      run: |
+        mkdir buildinfo
+        mv $(find ./OP/bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") ./buildinfo
+        
+        mkdir packages
+        mv $(find ./OP/bin/packages/ -type f -name "*.ipk") ./packages
+
+        mkdir firmware
+        rm -rf $(find ./OP/bin/targets/ -type d -name "packages")
+
+        cd firmware 
+        mkdir All
+        cp -rf $(find ../OP/bin/targets/ -type f) ./All
+        cp -rf ../buildinfo ./All
+        cp -rf ../packages ./All
+        
+        mkdir BIOS
+        mv $(find ../OP/bin/targets/ -type f -name "openwrt-x86-64-generic-squashfs-combined.*") ./BIOS
+        
+        mkdir EFI
+        mv $(find ../OP/bin/targets/ -type f -name "openwrt-x86-64-generic-squashfs-combined-efi.*") ./EFI
+
+    - name: Deliver buildinfo / 传输输出配置
+      uses: actions/upload-artifact@v2
+      with:
+        name: Buildinfo
+        path: ./buildinfo
+
+    - name: Deliver packages / 传输软件包
+      uses: actions/upload-artifact@v2
+      with:
+        name: Packages
+        path: ./packages
+
+    - name: Deliver all compiled files / 传输所有输出文件
+      uses: actions/upload-artifact@v2
+      with:
+        name: All Compiled Files
+        path: ./firmware/All
+    
+    - name: Deliver BIOS firmware / 传输 BIOS 引导固件
+      uses: actions/upload-artifact@v2
+      with:
+        name: Firmware-BIOS
+        path: ./firmware/BIOS
+
+    - name: Deliver EFI firmware / 传输 EFI 引导固件
+      uses: actions/upload-artifact@v2
+      with:
+        name: Firmware-EFI
+        path: ./firmware/EFI
+
+    - name: Get Date / 获取当前日期
+      id: getdate
+      run: echo "::set-output name=date::$(date "+%Y%m%d")"
+    
+    - name: Upload release asset / 自动发布至 Releases
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: ./firmware/All/*
+        tag: ${{ steps.getdate.outputs.date }}
+        overwrite: true
+        file_glob: true
+
+    - name: Delete workflow runs / 删除过期的工作流
+      uses: GitRML/delete-workflow-runs@main
+      with:
+        token: ${{ github.token }}
+        repository: ${{ github.repository }}
+        retain_days: 30
+        keep_minimum_runs: 14
+
+    - name: Remove old Releases / 删除过期的发布
+      uses: dev-drprasad/delete-older-releases@v0.1.0
+      with:
+        keep_latest: 30
+        delete_tags: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
